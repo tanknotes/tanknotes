@@ -5,7 +5,6 @@
     </section>
     <section class="card margin-top">
       <div class="markdown-body" :class="specClassName">
-        <h1 style='margin-top: 20px;'>{{ boss.name }}</h1>
         <div v-html="markdownHtml" />
       </div>
     </section>
@@ -18,6 +17,7 @@ import SPECS from '@/data/SPECS'
 import '@/style-markdown.css'
 
 var md = require('markdown-it')({
+  html: true,
   breaks: true,
   typographer: true,
   linkify: true,
