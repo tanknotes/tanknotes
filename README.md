@@ -24,9 +24,9 @@ npm install
 
 ## Markdown
 
-Basic markdown: https://guides.github.com/features/mastering-markdown/
-Custom attributes for markdown: https://github.com/arve0/markdown-it-attrs
-Custom containers: https://github.com/markdown-it/markdown-it-container
+Basic markdown: https://guides.github.com/features/mastering-markdown/ 
+Custom attributes for markdown: https://github.com/arve0/markdown-it-attrs 
+Custom containers: https://github.com/markdown-it/markdown-it-container 
 
 #### Custom attributes
 Custom attribute | Function
