@@ -9,17 +9,17 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: process.env.SUB_FOLDER + '/',
       name: 'Home',
       component: Home
     },
     {
-      path: '/:raidUrl',
+      path: process.env.SUB_FOLDER + '/:raidUrl',
       name: 'Raid',
       component: Raid
     },
     {
-      path: '/:raidUrl/:bossUrl',
+      path: process.env.SUB_FOLDER + '/:raidUrl/:bossUrl',
       name: 'Boss',
       component: Boss
     }
