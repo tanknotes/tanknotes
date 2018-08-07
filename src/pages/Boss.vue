@@ -1,9 +1,6 @@
 <template>
   <main>
     <section class="card">
-      <spec-selection/>
-    </section>
-    <section class="card margin-top">
       <div class="markdown-body" :class="specClassName">
         <div v-html="markdownHtml" />
       </div>

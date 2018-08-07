@@ -14,6 +14,7 @@ export default new Vuex.Store({
     specSelectionIsOpen: false,
     banner: '',
     bannerPos: 0,
+    mainPos: 0,
   },
   mutations: {
     store(state, payload) {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     },
     setBannerPos(state, val) {
       return state.bannerPos = val
+    },
+    setMainPos(state, val) {
+      return state.mainPos = val
     },
   },
   actions: {

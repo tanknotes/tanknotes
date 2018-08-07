@@ -26,7 +26,16 @@ If you "destroy" the soak cannon, you get 2x Soaks. If you "destroy" the move ou
 ### Additional Notes
 - The hits from the boss do not consume bone shield charges (confirmed, to not be a bug) {.spec-blood}
 - You can torpedo away from the boss when bombardment timer is ~1s and be safe from all hits for extra DPS time {.spec-brew}
+- You can use Spellwarding + Divine Shield to negate the artillery strikes and stand in place (still be away from others) {.spec-pprot}
+- **Mythic** also works for empowered soak {.spec-pprot}
+- Bombardment - Run out, leap back in is usually best practice. {.spec-veng}
+- Rage of the sleeper negates the knockback element of the Fel Bombardment, however you still take full damage (can be useful when limited on space and you have CDs spare) {.spec-guard}
+- **Mythic** Rage of the sleeper negates the knockback from the empowered soak, so you can do 2 in a row. {.spec-guard}
 
-::: div warn
-*content*
-:::
+### Boss Specific Weak Auras
+[Tank Taunt (Tank Specific Weak Auras)](https://wago.io/Sy-r7pTyM) 
+Latest Version: V7 - 02/02/2017
+
+### Video Guides
+[Mine](https://www.youtube.com/watch?v=Jr96dfICftY)
+[Fatboss](https://www.youtube.com/watch?v=pHfT74Qw1WY)

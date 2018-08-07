@@ -91,7 +91,7 @@ git add .
 git commit -m "my fancy commit message"
 git push
 
-# update git-page
-git subtree push --prefix dist origin gh-pages
+# update git-page (from git bash -- doesn't work in CMD)
+npm run deploy
 ```
  

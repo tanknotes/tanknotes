@@ -15,7 +15,7 @@ html {
     --accent-color: #2e7d32;
     --white-font: #ffffff;
     --card-background-color: #ffffff;
-    --spec-background-color: #37474f;
+    --spec-background-color:  #37474f;
     --grey-background-color: #37474f;
     
     --logo-height: 55px;
@@ -75,6 +75,7 @@ nav>.right>.current-spec {
 
 div.main {
     margin-top: var(--logo-height);
+    transition: all ease-out .2s;
 }
 
 div.main>.banner {
@@ -201,27 +202,6 @@ main {
     display: inherit;
 }
 
-/* .markdown-body.all *[class^="spec-"]:after {
-    content: "";
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-color: var(--spec-background-color);
-    background-size: 90%;
-    margin-bottom: -7px;
-    margin-left: 10px;
-    border-radius: 50%;
-    background-position: 49% 50%;
-}
-
-.markdown-body.all .spec-blood:after {
-    background-image: url('https://bnetcmsus-a.akamaihd.net/cms/forum_icon/6D5HKWY2GULD1465340163386.png');
-}
-.markdown-body.all .spec-brew:after {
-    background-image: url('https://bnetcmsus-a.akamaihd.net/cms/forum_icon/MD3875H6PEN31465340163613.png');
-} */
-
 .slide-fade-enter-active {
     transition: all .2s ease;
 }
@@ -247,17 +227,20 @@ main {
     height: 70px;
     width: 70px;
     float: left;
-    background-size: 80%;
+    background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
-    border: 3px solid var(--spec-background-color);
     transition: all ease-out .2s;
     margin-right: 10px;
     cursor: pointer;
+    border: 8px solid var(--spec-background-color);
+    filter: grayscale(1);
 }
 
 .spec-picker>.spec.active {
-    border: 3px solid var(--accent-color);
+    border: 4px solid var(--accent-color);
+    background-size: 80%;
+    filter: grayscale(0);
 }
 
 .card {

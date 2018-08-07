@@ -2,8 +2,7 @@
   <main>
     <section class="card">
       <h1 class="center">{{ raid.name }}</h1>
-    </section>
-    <section>
+
       <div class="boss-links">
         <router-link 
           v-for="boss in bosses"

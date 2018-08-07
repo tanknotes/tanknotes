@@ -1,9 +1,17 @@
 <template>
-  <main>
-    <section class="center card">
-      <h1>Raids</h1>
+  <main :style="{ 'margin-top': '-115px' }">
+    <section class="card">
+      <h1 class="center">Tanknotes</h1>
+      <p class="center margin-top">
+        Lorem Ipsum<br>
+        Lorem ipsum dolor, sit amet consectetur
+      </p>
+
+      <spec-selection class="margin-top"/>
     </section>
-    <section>
+    <section class="center card margin-top">
+      <h1>Raids</h1>
+
       <div class="boss-links">
         <router-link 
           v-for="raid in raids"
