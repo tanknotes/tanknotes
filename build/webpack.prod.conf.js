@@ -116,6 +116,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
+
+    // generate 404.html with content of index.html
     new HtmlWebpackPlugin({
       filename: config.build.fileNotFound,
       inject: true,

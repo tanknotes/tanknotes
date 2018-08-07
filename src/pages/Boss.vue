@@ -60,7 +60,9 @@ export default {
       if (!this.boss.content) {
         return ""
       }
-      return md.render(require(`raw-loader!@/data/${this.boss.content}`))
+
+      var bossGuide = require(`raw-loader!./../../static/guides/${this.boss.content}`)
+      return md.render(bossGuide)
     },
     currentSpec: function() {
       return SPECS[this.$vuex.state.currentSpec]
