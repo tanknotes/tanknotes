@@ -116,16 +116,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
-    new CopyWebpackPlugin([
-      { 
-        from: path.resolve(__dirname, '../404.html'), 
-        to: config.build.fileNotFound,
-      }
-    ]),
     new HtmlWebpackPlugin({
       filename: config.build.fileNotFound,
-      inject: false,
-      template: '404.html',
+      inject: true,
+      template: 'index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
