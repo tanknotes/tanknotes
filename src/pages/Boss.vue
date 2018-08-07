@@ -49,27 +49,33 @@ export default {
       boss: RAIDS
         .find(e => e.url === this.$route.params.raidUrl).bosses
         .find(e => e.url === this.$route.params.bossUrl),
+      bossGuide: null,
     }
   },
   created: function() {
     this.$vuex.commit('setBannerImage', this.boss.img)
     this.$vuex.commit('setBannerPos', 50)
+
+    // require only local and make request in prod
+    if (process.env.NODE_ENV === "development") {
+      var bossGuide = require(`raw-loader!./../../static/guides/${this.boss.content}`)
+      this.bossGuide = bossGuide
+      return
+    }
+
+    if (process.env.NODE_ENV !== "development") {
+      this.axios.get(`${process.env.SUB_FOLDER}/static/guides/${this.boss.content}`).then((response) => {
+        this.bossGuide = response.data
+      })
+    }
   },
   computed: {
     markdownHtml: function() {
-      if (!this.boss.content) {
+      if (!this.boss.content || !this.bossGuide) {
         return ""
       }
 
-      if (process.env.NODE_ENV === "development") {
-        var bossGuide = require(`raw-loader!./../../static/guides/${this.boss.content}`)
-        return md.render(bossGuide)
-      }
-
-      this.axios.get(`${process.env.SUB_FOLDER}/static/guides/${this.boss.content}`).then((response) => {
-        console.log(response.data)
-        return md.render(bossGuide)
-      })
+      return md.render(this.bossGuide)
     },
     currentSpec: function() {
       return SPECS[this.$vuex.state.currentSpec]
