@@ -61,8 +61,15 @@ export default {
         return ""
       }
 
-      var bossGuide = require(`raw-loader!./../../static/guides/${this.boss.content}`)
-      return md.render(bossGuide)
+      if (process.env.NODE_ENV === "development") {
+        var bossGuide = require(`raw-loader!./../../static/guides/${this.boss.content}`)
+        return md.render(bossGuide)
+      }
+
+      this.axios.get(`/static/guides/${this.boss.content}`).then((response) => {
+        console.log(response.data)
+        return md.render(bossGuide)
+      })
     },
     currentSpec: function() {
       return SPECS[this.$vuex.state.currentSpec]

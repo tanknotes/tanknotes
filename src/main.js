@@ -20,7 +20,6 @@ Vue.use(VueTippy, {
   arrow: true,
 })
 
-
 import NavBar from '@/components/NavBar'
 Vue.component('nav-bar', NavBar)
 
