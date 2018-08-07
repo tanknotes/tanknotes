@@ -115,7 +115,24 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new CopyWebpackPlugin([
+      { 
+        from: path.resolve(__dirname, '../404.html'), 
+        to: config.build.fileNotFound,
+      }
+    ]),
+    new HtmlWebpackPlugin({
+      filename: config.build.fileNotFound,
+      inject: false,
+      template: '404.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunksSortMode: 'dependency'
+    }),
   ]
 })
 
