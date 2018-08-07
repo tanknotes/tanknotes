@@ -66,7 +66,7 @@ export default {
         return md.render(bossGuide)
       }
 
-      this.axios.get(`/static/guides/${this.boss.content}`).then((response) => {
+      this.axios.get(`${process.env.SUB_FOLDER}/static/guides/${this.boss.content}`).then((response) => {
         console.log(response.data)
         return md.render(bossGuide)
       })
