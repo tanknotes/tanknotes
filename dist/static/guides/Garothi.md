@@ -1,5 +1,7 @@
 # Garothi Worldbreaker
 
+[[toc]]
+
 ### Positioning
 
 - When you are targeted by "Fel Bombardment" move out to the side and run from the impact points. (See gif to the right)

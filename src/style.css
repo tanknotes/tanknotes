@@ -20,6 +20,7 @@ html {
     
     --logo-height: 55px;
     --spec-bar-width: 85px;
+    --table-of-content-width: 200px;
 
     --drop-shadow-mid: 1px 1px 2px 0px rgba(0, 0, 0, .2);
     --drop-shadow-high: 2px 2px 14px 2px rgba(0, 0, 0, .4);
@@ -181,6 +182,10 @@ main {
     display: none;
 }
 
+.markdown-body h3 {
+    margin-top: 45px;
+}
+
 
 .markdown-body.spec-blood li.spec-blood,
 .markdown-body.spec-brew li.spec-brew, 
@@ -200,6 +205,26 @@ main {
 .markdown-body.spec-guard .spec-guard,
 .markdown-body.all * {
     display: inherit;
+}
+
+.has-toc>#boss-guide {
+    float: left;
+    width: calc(100% - var(--table-of-content-width) - 20px);
+}
+
+.has-toc>#boss-toc {
+    width: var(--table-of-content-width);
+    float: right;
+}
+
+.has-toc>#boss-toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.has-toc>#boss-toc ul>li:not(:last-of-type) {
+    margin-bottom: 10px;
 }
 
 .slide-fade-enter-active {

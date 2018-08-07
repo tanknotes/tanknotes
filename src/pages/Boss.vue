@@ -1,9 +1,10 @@
 <template>
   <main>
-    <section class="card">
-      <div class="markdown-body" :class="specClassName">
+    <section :class="tableOfContent === '' ? '' : 'has-toc'">
+      <div id="boss-guide" class="markdown-body card" :class="specClassName">
         <div v-html="markdownHtml" />
       </div>
+      <div id="boss-toc" v-html="tableOfContent" v-if="tableOfContent" class="markdown-body card"></div>
     </section>
   </main>
 </template>
@@ -20,6 +21,10 @@ var md = require('markdown-it')({
   linkify: true,
 });
 
+md.use(require("markdown-it-anchor"));
+md.use(require("markdown-it-table-of-contents"), {
+  includeLevel: [3],
+});
 md.use(require('markdown-it-attrs'));
 md.use(require('markdown-it-container'), 'div', {
 
@@ -47,6 +52,7 @@ export default {
         .find(e => e.url === this.$route.params.raidUrl).bosses
         .find(e => e.url === this.$route.params.bossUrl),
       bossGuide: null,
+      tableOfContent: '',
     }
   },
   created: function() {
@@ -72,7 +78,15 @@ export default {
         return ""
       }
 
-      return md.render(this.bossGuide)
+      let guide = md.render(this.bossGuide)
+      //get table of content from renderde markdown
+      const regex = new RegExp("<div.*class=.table-of-contents.*.*?</div>", "g")
+      const matches = guide.match(regex)
+      const toc = matches ? matches[0] : ''
+      this.tableOfContent = toc
+      guide = guide.replace(toc, '')
+
+      return guide
     },
     currentSpec: function() {
       return SPECS[this.$vuex.state.currentSpec]
