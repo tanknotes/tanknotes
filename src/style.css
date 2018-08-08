@@ -216,6 +216,9 @@ main {
 
 /* markdown-colors */
 
+.mce-notification.mce-notification-warning { display: none !important; }
+.mce-edit-area.mce-container.mce-panel.mce-stack-layout-item>iframe { min-height: 500px; }
+
 .color-fire { color: rgb(92%, 27%, 38%) !important; }
 .color-physical { color: rgb(229, 204, 128) !important; }
 

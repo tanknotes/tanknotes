@@ -5,6 +5,8 @@ import Home from '@/pages/Home'
 import Raid from '@/pages/Raid'
 import Boss from '@/pages/Boss'
 import Editor from '@/pages/Editor'
+import Quill from '@/pages/Quill'
+import Tiny from '@/pages/Tiny'
 
 Vue.use(Router)
 
@@ -29,6 +31,16 @@ export default new Router({
       path: process.env.SUB_FOLDER + 'markdown-editor',
       name: 'markdown-editor',
       component: Editor,
+    },
+    {
+      path: process.env.SUB_FOLDER + 'quill',
+      name: 'quill',
+      component: Quill,
+    },
+    {
+      path: process.env.SUB_FOLDER + 'tiny',
+      name: 'tiny',
+      component: Tiny,
     },
   ],
   mode: 'history',
