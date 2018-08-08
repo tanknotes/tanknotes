@@ -3,8 +3,9 @@
     <section class="card">
       <h1 class="center">Tanknotes</h1>
       <p class="center margin-top">
-        Lorem Ipsum<br>
-        Lorem ipsum dolor, sit amet consectetur
+        random stuff<br><br>
+        Choose your spec and we'll hide the unimportant stuff for you.<br>
+        You can change your spec at any time by clicking in the top right corner.
       </p>
 
       <spec-selection class="margin-top"/>

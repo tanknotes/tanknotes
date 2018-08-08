@@ -29,6 +29,9 @@ Vue.component('spec-selection', SpecSelection)
 import SpecSelectionBar from '@/components/SpecSelectionBar'
 Vue.component('spec-selection-bar', SpecSelectionBar)
 
+import Markdown from '@/components/Markdown'
+Vue.component('markdown-render', Markdown)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

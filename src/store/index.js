@@ -15,6 +15,7 @@ export default new Vuex.Store({
     banner: '',
     bannerPos: 0,
     mainPos: 0,
+    lastBossGuide: '',
   },
   mutations: {
     store(state, payload) {
