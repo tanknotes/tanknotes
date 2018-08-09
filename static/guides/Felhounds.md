@@ -1,12 +1,1 @@
-# Felhounds of Sageras
-
-- Thing for all tanks
-- Thing for blood only {.spec-blood}
-- brewmaster only {.spec-brew}
-- vengeance only {.spec-veng} 
-
-<div style="color: red">I do whatever I want</div>
-
-random stuff for blood {.spec-blood}
-
-![Pally only](https://static.wixstatic.com/media/b785ef_5c0e1a9d744a470ea487356ee1ee2fef~mv2.gif) {.spec-pprot}
+<p><strong>Positioning/Things to Know </strong></p> <ul> <li>Keep the bosses 40y from each other (else they both get +100% dmg)</li> <li>Decay/Smouldering hits in a 25y cone, be careful where you point the boss!</li> <li>Avoid pointing the dog into the melee clump when you get pulled in.</li> <li>Split/Immune the fear if it ever goes on you.</li> <li>Resist the "Consuming Sphere" pull, as you could cleave melee.</li> </ul> <p><span style="white-space: pre;"></span></p> <p>&nbsp;</p> <p><strong>Tank Damage Profile</strong></p> <table style="border-collapse: collapse; width: 36.7585%; height: 52px;" border="1"> <tbody> <tr style="height: 18px;"> <td style="width: 17.3729%; height: 18px;"><span style="color: #800000;">50% Physical</span></td> <td style="width: 19.3856%; height: 18px;"><span style="color: #800000;">All Auto Attack</span></td> </tr> <tr style="height: 18px;"> <td style="width: 17.3729%; height: 18px;"><span style="color: #cc99ff;">50% Shadow</span></td> <td style="width: 19.3856%; height: 18px;"><span style="color: #cc99ff;">If tanking Shatug</span></td> </tr> <tr style="height: 18px;"> <td style="width: 17.3729%; height: 16px;"><span style="color: #ff0000;">50% Fire</span></td> <td style="width: 19.3856%; height: 16px;"><span style="color: #ff0000;">If tanking F'harg</span></td> </tr> </tbody> </table> <p>&nbsp;</p>
