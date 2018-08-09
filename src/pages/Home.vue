@@ -5,7 +5,8 @@
       <p class="center margin-top">
         random stuff<br><br>
         Choose your spec and we'll hide the unimportant stuff for you.<br>
-        You can change your spec at any time by clicking in the top right corner.
+        You can change your spec at any time by clicking in the top right corner.<br>
+        <a href="www.wowhead.com/spell=49998/death-strike">Test</a>
       </p>
 
       <spec-selection class="margin-top"/>

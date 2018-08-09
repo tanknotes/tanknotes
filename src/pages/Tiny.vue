@@ -2,9 +2,19 @@
   <main>
     <spec-selection class="card" />
     <section class="margin-top">
-      <tiny v-model="content" :init="initConfig" />
+      <div id="tabs">
+        <div :class="currentTab == 0 ? 'active' : ''" @click="currentTab = 0">Editor</div>
+        <div :class="currentTab == 1 ? 'active' : ''" @click="currentTab = 1">Preview</div>
+        <div :class="currentTab == 2 ? 'active' : ''" @click="currentTab = 2">Code</div>
+      </div>
     </section>
-    <section class="card margin-top markdown-body" :class="specClassName" v-html="content"/>
+    <section class="card">
+      <tiny v-if="currentTab == 0" v-model="content" :init="initConfig" />
+      <div v-if="currentTab == 1" class="markdown-body" :class="specClassName" v-html="content"/>
+      <div v-if="currentTab == 2">
+        <code>{{ content }}</code>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -12,6 +22,7 @@
 import Editor from '@tinymce/tinymce-vue';
 import RAIDS from '@/data/RAIDS'
 import SPECS from '@/data/SPECS'
+import EDITOR_CONFIG from '@/data/EDITOR_CONFIG'
 
 export default {
   name: 'quill',
@@ -21,14 +32,22 @@ export default {
       shortHands: SPECS.map(e => e.class === '' ? e.short : 'spec-' + e.short),
       initConfig: {
         style_formats: [
-          {title: 'Blood Death Knight', inline: 'span', classes: 'spec-blood'},
-          {title: 'Physical Damage', inline: 'span', styles: {color: '#ff0000'}},
-          {title: 'Magic Damage', block: 'span', styles: {color: '#ffff00'}},
+          {title: 'Specs', items: SPECS.map(e => { return {
+            title: e.spec + " " + e.class,
+            inline: 'span',
+            classes: e.class === '' ? e.short : 'spec-' + e.short,
+          }})},
+          ...EDITOR_CONFIG
         ],
-        content_css: 'my_custom_css.css',
-        plugins: "textcolor",
-        toolbar: "forecolor backcolor",
+        invalid_styles: 'font-family text-decoration',
+        content_css: 'static/tinymce.css',
+        plugins: "textcolor link lists image table",
+        menubar: false,
+        toolbar: [
+          "formatselect | styleselect | forecolor | backcolor | bold italic | bullist numlist | link image table | alignleft aligncenter alignright alignjustify | outdent indent | code | undo redo | removeformat",
+        ],
       },
+      currentTab: 0,
     }
   },
   components: {

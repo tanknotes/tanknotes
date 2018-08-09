@@ -1,6 +1,6 @@
 <template>
   <main>
-    <markdown-render :markdown="bossGuide" :spec="specClassName" />
+    <div v-html="filteredGuide" ref="guide" class="card markdown-body" :data-spec="specClassName" />
   </main>
 </template>
 
@@ -38,6 +38,24 @@ export default {
   computed: {
     specClassName: function() {
       return this.$vuex.state.currentSpec === 0 ? 'all' : `spec-${SPECS[this.$vuex.state.currentSpec].short.toLowerCase()}`
+    },
+    filteredGuide: function() {
+      let node = document.createElement('div')
+      node.innerHTML = this.bossGuide
+
+      if (this.specClassName === 'all') {
+        return node.innerHTML
+      }
+
+      node.querySelectorAll(`*[class^="spec-"]:not(.${this.specClassName})`).forEach((elem, index) => {
+        if (elem.parentNode.nodeName === 'LI') {
+          elem.parentNode.remove()
+          return
+        }
+        elem.remove()
+      })
+
+      return node.innerHTML
     }
   }
 }

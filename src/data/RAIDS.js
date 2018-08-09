@@ -11,7 +11,7 @@ export default [
         name: 'Garothi Worldbreaker',
         url: 'Garothi-Worldbreaker',
         img: 'http://wow.zamimg.com/uploads/news/11893-fatbosstv-garothi-worldbreaker-preview-mythic-10-for-max-loot-this-week-video-ga.jpg',
-        content: 'Garothi.md',
+        content: 'Garothi.html',
       },
       {
         bossId: 1234,

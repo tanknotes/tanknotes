@@ -19,6 +19,9 @@
       >
         {{ raid.short }}
       </router-link>
+      <router-link v-if='isDev' :to="{ name: 'Editor' }" class="raid">
+        Editor
+      </router-link>
     </div>
   </nav>
 </template>
@@ -37,7 +40,10 @@ export default {
   methods: {
     toggleSpecSelection: function() {
       this.$vuex.commit('toggle', 'specSelectionIsOpen')
-    }
+    },
+    isDev: function() {
+      return process.env.NODE_ENV === 'development'
+    },
   },
   computed: {
     currentSpec: function() {

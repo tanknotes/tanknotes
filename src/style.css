@@ -190,37 +190,10 @@ main {
     padding: 35px;
 }
 
-.markdown-body *[class^="spec-"] {
-    display: none;
-}
-
-.markdown-body.spec-blood li.spec-blood,
-.markdown-body.spec-brew li.spec-brew, 
-.markdown-body.spec-veng li.spec-veng, 
-.markdown-body.spec-pprot li.spec-pprot, 
-.markdown-body.spec-wprot li.spec-wprot, 
-.markdown-body.spec-guard li.spec-guard,
-.markdown-body.all li {
-    display: list-item;
-}
-
-.markdown-body.spec-blood .spec-blood,
-.markdown-body.spec-brew .spec-brew, 
-.markdown-body.spec-veng .spec-veng, 
-.markdown-body.spec-pprot .spec-pprot, 
-.markdown-body.spec-wprot .spec-wprot, 
-.markdown-body.spec-guard .spec-guard,
-.markdown-body.all * {
-    display: inherit;
-}
-
 /* markdown-colors */
 
 .mce-notification.mce-notification-warning { display: none !important; }
 .mce-edit-area.mce-container.mce-panel.mce-stack-layout-item>iframe { min-height: 500px; }
-
-.color-fire { color: rgb(92%, 27%, 38%) !important; }
-.color-physical { color: rgb(229, 204, 128) !important; }
 
 .class-helper {
     display: flex;
@@ -256,6 +229,22 @@ main {
 }
 
 /* components */
+#tabs {
+    display: flex;
+}
+
+#tabs>div {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    transition: all ease-out .2s;
+    cursor: pointer;
+}
+
+#tabs>div.active {
+    background-color: white;
+}
+
 .spec-picker {
     overflow: auto;
     margin: 0 auto;
